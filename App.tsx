@@ -1,43 +1,26 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+/* eslint-disable react/no-unstable-nested-components */
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
+import { StatusBar } from 'expo-status-bar';
 
-import Chat from 'src/pages/Chat';
-import Profile from 'src/pages/Profile';
-import Task from 'src/pages/Task';
-import Work from 'src/pages/Work';
-import defaultTheme from 'src/styles/theme';
+import defaultTheme from './src/styles/theme';
 
-import RouterPageName from 'src/ts/enums';
+import TabNavigation from './src/navigation/TabNavigation';
 
-const Stack = createNativeStackNavigator();
+const theme: typeof DefaultTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: defaultTheme.colors.backgroundWhite,
+  },
+};
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName={RouterPageName.work}>
-          <Stack.Screen
-            name={RouterPageName.work}
-            component={Work}
-            options={{ title: RouterPageName.work }}
-          />
-          <Stack.Screen
-            name={RouterPageName.task}
-            component={Task}
-            options={{ title: RouterPageName.task }}
-          />
-          <Stack.Screen
-            name={RouterPageName.chat}
-            component={Chat}
-            options={{ title: RouterPageName.chat }}
-          />
-          <Stack.Screen
-            name={RouterPageName.profile}
-            component={Profile}
-            options={{ title: RouterPageName.profile }}
-          />
-        </Stack.Navigator>
+      <NavigationContainer theme={theme}>
+        <TabNavigation />
+        <StatusBar />
       </NavigationContainer>
     </ThemeProvider>
   );

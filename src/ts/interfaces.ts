@@ -1,7 +1,7 @@
 import type { FC, MemoExoticComponent } from 'react';
 import type { SvgProps } from 'react-native-svg';
 
-import type { TabParamList, NavigationCallback } from './types';
+import type { TabParamList, StackParamList, NavigationCallback } from './types';
 
 interface TabNavigationScreen {
   screen: NavigationCallback | MemoExoticComponent<() => JSX.Element | null>;
@@ -19,4 +19,8 @@ interface UserData {
   avatarUrl: string | null;
 }
 
-export type { TabNavigationScreen, UserData };
+interface StackNavigationScreen extends Pick<TabNavigationScreen, 'screen' | 'title'> {
+  name: keyof StackParamList;
+}
+
+export type { TabNavigationScreen, StackNavigationScreen, UserData };

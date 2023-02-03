@@ -12,6 +12,7 @@ declare module 'styled-components' {
       backgroundGrey: string;
       backgroundWhite: string;
       iconColor: string;
+      lineColor: string;
     };
     typography: {
       largeTitle: string;
@@ -34,6 +35,7 @@ const defaultTheme: DefaultTheme = {
     backgroundGrey: '#EFF0F6',
     backgroundWhite: '#F7F7FC',
     iconColor: '#6E7191',
+    lineColor: '#D9DBE9',
   },
   typography: {
     largeTitle: '32px',

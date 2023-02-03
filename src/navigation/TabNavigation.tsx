@@ -1,9 +1,13 @@
+/* eslint-disable global-require */
 /* eslint-disable react/no-unstable-nested-components */
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useFonts } from 'expo-font';
 
 import navigationScreens from 'src/utils/navigationScreens';
 
 import {
+  headerStyle,
+  headerTitleStyle,
   tabBarActiveTintColor,
   tabBarInactiveTintColor,
   tabBarItemStyle,
@@ -14,6 +18,14 @@ import {
 const Tab = createBottomTabNavigator();
 
 function TabNavigation() {
+  const [fontLoaded] = useFonts({
+    'Poppins-SemiBold': require('../assets/fonts/poppins/Poppins-SemiBold.ttf'),
+  });
+
+  if (!fontLoaded) {
+    return null;
+  }
+
   return (
     <Tab.Navigator
       initialRouteName="Work"
@@ -23,6 +35,12 @@ function TabNavigation() {
         tabBarInactiveTintColor,
         tabBarLabelStyle,
         tabBarActiveTintColor,
+        headerStyle,
+        headerTitleStyle: {
+          ...headerTitleStyle,
+          fontWeight: '600',
+          fontFamily: 'Poppins-SemiBold',
+        },
       }}
     >
       {navigationScreens.map(({ screen, name, icon }) => {

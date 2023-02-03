@@ -20,10 +20,23 @@ const tabBarLabelStyle: StyleProp<TextStyle> = {
   lineHeight: 18,
 };
 
+const headerStyle = {
+  borderBottomWidth: 1,
+  borderColor: defaultTheme.colors.lineColor,
+};
+
+const headerTitleStyle = {
+  paddingVertical: 15,
+  fontSize: 20,
+  lineHeight: 26,
+};
+
 export {
   tabBarStyle,
   tabBarItemStyle,
   tabBarLabelStyle,
   tabBarActiveTintColor,
   tabBarInactiveTintColor,
+  headerStyle,
+  headerTitleStyle,
 };

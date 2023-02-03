@@ -9,6 +9,7 @@ declare module 'styled-components' {
       purple: string;
       pink: string;
       white: string;
+      backgroundGreen: string;
       backgroundGrey: string;
       backgroundWhite: string;
       iconColor: string;
@@ -32,6 +33,7 @@ const defaultTheme: DefaultTheme = {
     purple: '#5F2EEA',
     pink: '#ED2E7E',
     white: '#F3EFFF',
+    backgroundGreen: '#DFFFF6',
     backgroundGrey: '#EFF0F6',
     backgroundWhite: '#F7F7FC',
     iconColor: '#6E7191',

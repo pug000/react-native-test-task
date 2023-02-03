@@ -1,10 +1,14 @@
 import { memo } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import userData from 'src/utils/constants';
+
+import UserInfo from 'src/components/UserInfo/UserInfo';
 
 function Profile() {
   return (
     <View>
-      <Text>Profile</Text>
+      <UserInfo user={userData} />
     </View>
   );
 }

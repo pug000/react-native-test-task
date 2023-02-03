@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import userData from 'src/utils/constants';
 
-import UserInfo from 'src/components/UserInfo/UserInfo';
+import UserInfo from 'src/components/UserInfo';
 
 function Profile() {
   return (

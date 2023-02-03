@@ -1,10 +1,14 @@
 import type { FC, MemoExoticComponent } from 'react';
 import type { SvgProps } from 'react-native-svg';
 
-interface NavigationScreen {
-  screen: MemoExoticComponent<() => JSX.Element | null>;
-  name: string;
+import type { TabParamList, NavigationCallback } from './types';
+
+interface TabNavigationScreen {
+  screen: NavigationCallback | MemoExoticComponent<() => JSX.Element | null>;
+  name: keyof TabParamList;
+  title: string;
   icon: FC<SvgProps>;
+  headerShown: boolean;
 }
 
 interface UserData {
@@ -15,4 +19,4 @@ interface UserData {
   avatarUrl: string | null;
 }
 
-export type { NavigationScreen, UserData };
+export type { TabNavigationScreen, UserData };

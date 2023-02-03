@@ -3,7 +3,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useFonts } from 'expo-font';
 
-import navigationScreens from 'src/utils/navigationScreens';
+import tabNavigationScreens from 'src/utils/tabNavigationScreens';
+
+import type { TabParamList } from 'src/ts/types';
 
 import {
   headerStyle,
@@ -15,11 +17,11 @@ import {
   tabBarStyle,
 } from './TabNavigation.style';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<TabParamList>();
 
 function TabNavigation() {
   const [fontLoaded] = useFonts({
-    'Poppins-SemiBold': require('../assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'Poppins-SemiBold': require('../../assets/fonts/poppins/Poppins-SemiBold.ttf'),
   });
 
   if (!fontLoaded) {
@@ -43,7 +45,7 @@ function TabNavigation() {
         },
       }}
     >
-      {navigationScreens.map(({ screen, name, icon }) => {
+      {tabNavigationScreens.map(({ screen, name, title, icon, headerShown }) => {
         const Icon = icon;
         return (
           <Tab.Screen
@@ -51,8 +53,9 @@ function TabNavigation() {
             name={name}
             component={screen}
             options={{
-              title: name,
-              tabBarLabel: name,
+              title,
+              tabBarLabel: title,
+              headerShown,
               tabBarIcon: ({ color }) => <Icon color={color} width={24} height={24} />,
             }}
           />

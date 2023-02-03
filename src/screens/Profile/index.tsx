@@ -1,15 +1,16 @@
 import { memo } from 'react';
-import { View } from 'react-native';
 
 import userData from 'src/utils/constants';
 
 import UserInfo from 'src/components/UserInfo';
 
+import Container from './Profile.style';
+
 function Profile() {
   return (
-    <View>
+    <Container>
       <UserInfo user={userData} />
-    </View>
+    </Container>
   );
 }
 

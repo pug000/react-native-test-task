@@ -4,8 +4,7 @@ const Container = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  padding: 24px 16px 0 16px;
+  margin-bottom: 26px;
 `;
 
 const AvatarWrapper = styled.View`

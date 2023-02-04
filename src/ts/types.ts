@@ -8,7 +8,7 @@ type TabParamList = {
 type StackParamList = {
   Profile: undefined;
   Payment: undefined;
-  PaymentDescription: undefined;
+  PaymentDescription: { priceText: string };
 };
 
 type NavigationCallback = () => JSX.Element | null;

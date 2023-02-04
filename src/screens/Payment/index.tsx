@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import { memo } from 'react';
 import { useFonts } from 'expo-font';
 

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unstable-nested-components */
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'expo-status-bar';

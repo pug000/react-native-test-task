@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import { memo } from 'react';
 import { Image } from 'react-native';
 import { useFonts } from 'expo-font';
@@ -33,8 +31,8 @@ function UserInfo({ user }: UserInfoProps) {
   const uriPlaceholderImage = Image.resolveAssetSource(placeholderImage).uri;
 
   const [fontsLoaded] = useFonts({
-    'Poppins-SemiBold': require('../../assets/fonts/poppins/Poppins-SemiBold.ttf'),
-    'Poppins-Regular': require('../../assets/fonts/poppins/Poppins-Regular.ttf'),
+    'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
   });
 
   if (!fontsLoaded) {

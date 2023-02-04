@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 /* eslint-disable react/no-unstable-nested-components */
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useFonts } from 'expo-font';
@@ -21,7 +20,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 function TabNavigation() {
   const [fontLoaded] = useFonts({
-    'Poppins-SemiBold': require('../../assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
   });
 
   if (!fontLoaded) {

@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
@@ -20,8 +19,8 @@ const Stack = createStackNavigator<StackParamList>();
 
 function StackNavigation() {
   const [fontLoaded] = useFonts({
-    'Poppins-SemiBold': require('../../assets/fonts/poppins/Poppins-SemiBold.ttf'),
-    'Poppins-Regular': require('../../assets/fonts/poppins/Poppins-Regular.ttf'),
+    'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
   });
 
   if (!fontLoaded) {

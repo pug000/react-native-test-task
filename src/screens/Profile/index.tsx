@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { memo } from 'react';
 import { TouchableHighlight, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { CompositeNavigationProp } from '@react-navigation/native';
 import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import type { StackNavigationProp } from '@react-navigation/stack';
+import { useFonts } from 'expo-font';
 
 import { userData } from 'src/utils/constants';
 
@@ -30,6 +30,14 @@ type ProfileScreenNavigation = CompositeNavigationProp<
 
 function Profile() {
   const { navigate } = useNavigation<ProfileScreenNavigation>();
+  const [fontLoaded] = useFonts({
+    'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
+    'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
+  });
+
+  if (!fontLoaded) {
+    return null;
+  }
 
   const navigateOnPress = () => navigate('Payment');
 

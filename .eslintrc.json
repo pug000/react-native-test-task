@@ -28,7 +28,8 @@
     "@typescript-eslint/no-explicit-any": "error",
     "comma-dangle": ["error", "only-multiline"],
     "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "global-require": 0
   },
   "settings": {
     "import/resolver": {

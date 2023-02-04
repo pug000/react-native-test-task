@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import { TouchableHighlight } from 'react-native';
 import { useFonts } from 'expo-font';
 import { memo } from 'react';

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
@@ -15,6 +16,9 @@ import Profile from 'src/screens/Profile';
 
 import type { StackParamList } from 'src/ts/types';
 
+import ArrowBackIcon from 'src/assets/icons/arrow-back.svg';
+
+import { TouchableOpacity } from 'react-native';
 import {
   headerStyle,
   initialHeaderTitleStyle,
@@ -53,6 +57,7 @@ function StackNavigation() {
         component={Profile}
         options={{
           headerStyle,
+          headerTitleAlign: 'left',
           headerTitleStyle: {
             ...initialHeaderTitleStyle,
             fontWeight: '600',
@@ -75,6 +80,22 @@ function StackNavigation() {
               fontWeight: '400',
               fontFamily: 'Poppins-Regular',
             },
+            headerTitleContainerStyle: {
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            headerLeftContainerStyle: {
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+              marginBottom: 6,
+            },
+            headerLeft: (props) => (
+              <TouchableOpacity activeOpacity={0.6} {...props}>
+                <ArrowBackIcon />
+              </TouchableOpacity>
+            ),
           }}
         />
       ))}

@@ -6,7 +6,7 @@ import type { CompositeNavigationProp } from '@react-navigation/native';
 import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import type { StackNavigationProp } from '@react-navigation/stack';
 
-import userData from 'src/utils/constants';
+import { userData } from 'src/utils/constants';
 
 import UserInfo from 'src/components/UserInfo';
 

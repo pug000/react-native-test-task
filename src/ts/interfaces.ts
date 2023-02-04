@@ -19,8 +19,16 @@ interface UserData {
   avatarUrl: string | null;
 }
 
+interface Option {
+  id: string;
+  priceText: string;
+  text: string;
+  discount: string | null;
+  discountPercent: string | null;
+}
+
 interface StackNavigationScreen extends Pick<TabNavigationScreen, 'screen' | 'title'> {
   name: keyof StackParamList;
 }
 
-export type { TabNavigationScreen, StackNavigationScreen, UserData };
+export type { TabNavigationScreen, StackNavigationScreen, Option, UserData };

@@ -1,18 +1,15 @@
 import styled from 'styled-components/native';
 
-const Container = styled.View`
+const Container = styled.ScrollView`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 24px;
-  flex: 1;
+  padding: 24px 16px 0 16px;
 `;
 
 const Wrapper = styled.View`
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
-  padding: 0 16px;
 `;
 
 const Title = styled.Text`

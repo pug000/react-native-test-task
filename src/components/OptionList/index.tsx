@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { FlatList } from 'react-native';
 
 import type { Option } from 'src/ts/interfaces';
 
@@ -15,14 +14,15 @@ interface OptionListProps {
 function OptionList({ options, navigateOnPress }: OptionListProps) {
   return (
     <Container>
-      <FlatList
-        data={options}
-        renderItem={({ item }) => (
-          <OptionItem option={item} navigateOnPress={navigateOnPress} />
-        )}
-        keyExtractor={({ id }) => id}
-        contentContainerStyle={{ paddingBottom: 5 }}
-      />
+      {options.map((option, index) => (
+        <OptionItem
+          key={option.id}
+          options={options}
+          option={option}
+          index={index}
+          navigateOnPress={navigateOnPress}
+        />
+      ))}
     </Container>
   );
 }

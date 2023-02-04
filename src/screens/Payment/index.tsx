@@ -29,7 +29,10 @@ function Payment() {
   }
 
   return (
-    <Container>
+    <Container
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 40 }}
+    >
       <Wrapper>
         <Title
           style={{ fontFamily: 'Poppins-Bold' }}

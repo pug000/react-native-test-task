@@ -18,6 +18,7 @@ const tabBarInactiveTintColor = defaultTheme.colors.iconColor;
 const tabBarLabelStyle: StyleProp<TextStyle> = {
   fontSize: 10,
   lineHeight: 18,
+  letterSpacing: 0.25,
 };
 
 const headerStyle = {

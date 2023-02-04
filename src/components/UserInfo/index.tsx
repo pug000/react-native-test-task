@@ -53,19 +53,21 @@ function UserInfo({ user }: UserInfoProps) {
           >
             {user.name}
           </Title>
-          <StatusText style={{ fontFamily: 'Poppins-Regular' }}>{user.status}</StatusText>
+          <StatusText numberOfLines={1} style={{ fontFamily: 'Poppins-Regular' }}>
+            {user.status}
+          </StatusText>
         </TopContainer>
         <RatingContainer>
           <RatingWrapper>
             <WrapperIcon>
               <StarIcon width={15} height={15} />
             </WrapperIcon>
-            <StyledText style={{ fontFamily: 'Poppins-Regular' }}>
+            <StyledText numberOfLines={1} style={{ fontFamily: 'Poppins-Regular' }}>
               {user.rating}
             </StyledText>
           </RatingWrapper>
           <RatingWrapper>
-            <StyledText style={{ fontFamily: 'Poppins-Regular' }}>
+            <StyledText numberOfLines={1} style={{ fontFamily: 'Poppins-Regular' }}>
               {`${user.review} review`}
             </StyledText>
           </RatingWrapper>
@@ -74,7 +76,9 @@ function UserInfo({ user }: UserInfoProps) {
           <WrapperIcon>
             <SuccessVerifiedIcon />
           </WrapperIcon>
-          <StyledText>Account verified</StyledText>
+          <StyledText numberOfLines={1} style={{ fontFamily: 'Poppins-Regular' }}>
+            Account verified
+          </StyledText>
         </BottomContainer>
       </InfoContainer>
     </Container>

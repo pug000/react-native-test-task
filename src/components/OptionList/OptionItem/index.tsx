@@ -9,11 +9,13 @@ import type { Option } from 'src/ts/interfaces';
 import { DiscountView, ItemWrapper, StyledText } from './OptionItem.style';
 
 interface OptionItemProps {
+  options: Option[];
   option: Option;
+  index: number;
   navigateOnPress: (priceText: string) => void;
 }
 
-function OptionItem({ option, navigateOnPress }: OptionItemProps) {
+function OptionItem({ options, option, index, navigateOnPress }: OptionItemProps) {
   const [fontLoaded] = useFonts({
     'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
     'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
@@ -31,20 +33,24 @@ function OptionItem({ option, navigateOnPress }: OptionItemProps) {
     >
       <ItemWrapper
         $borderColor={option.discount ? defaultTheme.colors.purple : undefined}
+        style={{ marginBottom: index !== options.length - 1 ? 16 : 0 }}
       >
         {option.discount && (
           <StyledText
             $textDecoration="line-through"
+            $color={defaultTheme.colors.lineColor}
             style={{ fontFamily: 'Poppins-Regular' }}
           >
             {option.discount}
           </StyledText>
         )}
         <StyledText
-          $color={option.discount ? defaultTheme.colors.purple : undefined}
+          $color={option.discount ? defaultTheme.colors.purple : defaultTheme.colors.dark}
+          $letterSpacing={option.discount ? '0.75px' : undefined}
           $fontSize="20px"
-          $lineHeight="32px"
-          style={{ fontFamily: 'Poppins-SemiBold' }}
+          $lineHeight={option.discount ? '32px' : '26px'}
+          $fontWeight={600}
+          style={{ fontFamily: 'Poppins-SemiBold', marginBottom: 8 }}
         >
           {option.priceText}
         </StyledText>

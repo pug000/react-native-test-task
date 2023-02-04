@@ -10,20 +10,20 @@ interface StyledTextProps {
   $fontSize?: string;
   $fontWeight?: number;
   $textDecoration?: string;
+  $letterSpacing?: string;
 }
 
 const ItemWrapper = styled.View<ItemWrapperProps>`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  width: 343px;
+  width: 100%;
   height: 116px;
   border-radius: 20px;
   padding: 16px;
   border: 2px solid;
   border-color: ${({ theme, $borderColor }) => $borderColor ?? theme.colors.lineColor};
-  margin-bottom: 16px;
   position: relative;
 `;
 
@@ -34,6 +34,7 @@ const StyledText = styled.Text<StyledTextProps>`
   color: ${({ theme, $color }) => $color ?? theme.colors.grey};
   text-decoration-line: ${({ $textDecoration }) => $textDecoration ?? 'none'};
   text-align: center;
+  letter-spacing: ${({ $letterSpacing }) => $letterSpacing ?? 0};
 `;
 
 const DiscountView = styled.View`

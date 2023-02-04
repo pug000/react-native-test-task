@@ -1,17 +1,28 @@
-import { memo } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { memo, useCallback } from 'react';
 import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
+import type { StackNavigationProp } from '@react-navigation/stack';
 
 import { options } from 'src/utils/constants';
 
 import OptionList from 'src/components/OptionList';
 
+import { StackParamList } from 'src/ts/types';
 import { Container, StyledText, Title, Wrapper } from './Payment.style';
 
 function Payment() {
+  const { navigate } = useNavigation<StackNavigationProp<StackParamList>>();
   const [fontLoaded] = useFonts({
     'Poppins-Bold': require('src/assets/fonts/poppins/Poppins-Bold.ttf'),
     'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
   });
+
+  const navigateOnPress = useCallback((priceText: string) => {
+    navigate('PaymentDescription', {
+      priceText,
+    });
+  }, []);
 
   if (!fontLoaded) {
     return null;
@@ -36,7 +47,7 @@ function Payment() {
           choose the most suitable subscription option for yourself.
         </StyledText>
       </Wrapper>
-      <OptionList options={options} />
+      <OptionList options={options} navigateOnPress={navigateOnPress} />
     </Container>
   );
 }

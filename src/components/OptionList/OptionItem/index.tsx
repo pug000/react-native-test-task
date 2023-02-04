@@ -10,9 +10,10 @@ import { DiscountView, ItemWrapper, StyledText } from './OptionItem.style';
 
 interface OptionItemProps {
   option: Option;
+  navigateOnPress: (priceText: string) => void;
 }
 
-function OptionItem({ option }: OptionItemProps) {
+function OptionItem({ option, navigateOnPress }: OptionItemProps) {
   const [fontLoaded] = useFonts({
     'Poppins-SemiBold': require('src/assets/fonts/poppins/Poppins-SemiBold.ttf'),
     'Poppins-Regular': require('src/assets/fonts/poppins/Poppins-Regular.ttf'),
@@ -23,7 +24,11 @@ function OptionItem({ option }: OptionItemProps) {
   }
 
   return (
-    <TouchableHighlight>
+    <TouchableHighlight
+      activeOpacity={0.6}
+      underlayColor="none"
+      onPress={() => navigateOnPress(option.priceText)}
+    >
       <ItemWrapper
         $borderColor={option.discount ? defaultTheme.colors.purple : undefined}
       >

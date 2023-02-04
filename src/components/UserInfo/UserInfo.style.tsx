@@ -5,6 +5,7 @@ const Container = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 26px;
+  width: 100%;
 `;
 
 const AvatarWrapper = styled.View`
@@ -20,16 +21,17 @@ const Avatar = styled.Image`
 
 const InfoContainer = styled.View`
   display: flex;
-  flex-direction: column;
   margin-left: 4px;
+  flex: 1;
 `;
 
 const Title = styled.Text`
   font-size: ${({ theme }) => theme.typography.subtitle};
   line-height: 24px;
   font-weight: 600;
+  max-width: 161px;
+  flex: 1;
   color: ${({ theme }) => theme.colors.dark};
-  width: 161px;
   margin-right: 16px;
 `;
 

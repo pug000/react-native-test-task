@@ -16,7 +16,7 @@ const ItemContainer = styled.View`
 
 const Wrapper = styled.View`
   max-width: 300px;
-  width: 100%;
+  flex: 1;
 `;
 
 const WrapperIcon = styled.View`

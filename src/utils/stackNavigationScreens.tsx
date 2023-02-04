@@ -1,4 +1,4 @@
-import Payment from 'src/screens/Payment/Payment';
+import Payment from 'src/screens/Payment';
 import PaymentDescription from 'src/screens/PaymentDescription';
 
 import type { StackNavigationScreen } from 'src/ts/interfaces';

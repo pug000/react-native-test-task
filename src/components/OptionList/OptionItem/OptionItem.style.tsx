@@ -45,7 +45,7 @@ const DiscountView = styled.View`
   border-top-right-radius: 18px;
   border-bottom-left-radius: 20px;
   top: 0;
-  right: 0;
+  right: -2px;
   width: 53px;
   height: 26px;
   color: ${({ theme }) => theme.colors.white};

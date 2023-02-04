@@ -27,8 +27,20 @@ interface Option {
   discountPercent: string | null;
 }
 
+interface PaymentOption {
+  id: string;
+  Icon: React.FC<SvgProps>;
+  text: string;
+}
+
 interface StackNavigationScreen extends Pick<TabNavigationScreen, 'screen' | 'title'> {
   name: keyof StackParamList;
 }
 
-export type { TabNavigationScreen, StackNavigationScreen, Option, UserData };
+export type {
+  TabNavigationScreen,
+  StackNavigationScreen,
+  Option,
+  PaymentOption,
+  UserData,
+};

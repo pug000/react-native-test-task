@@ -32,4 +32,6 @@ const options: Option[] = [
   },
 ];
 
-export { userData, options };
+const routesWithoutTabs = ['Payment', 'PaymentDescription'];
+
+export { userData, options, routesWithoutTabs };

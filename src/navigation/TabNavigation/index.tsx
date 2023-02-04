@@ -13,7 +13,6 @@ import {
   tabBarInactiveTintColor,
   tabBarItemStyle,
   tabBarLabelStyle,
-  tabBarStyle,
 } from './TabNavigation.style';
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -31,14 +30,16 @@ function TabNavigation() {
     <Tab.Navigator
       initialRouteName="Work"
       screenOptions={{
-        tabBarStyle,
         tabBarItemStyle,
         tabBarInactiveTintColor,
         tabBarLabelStyle,
         tabBarActiveTintColor,
         headerStyle,
+        headerTitleAlign: 'left',
         headerTitleStyle: {
           ...headerTitleStyle,
+          alignItems: 'center',
+          justifyContent: 'center',
           fontWeight: '600',
           fontFamily: 'Poppins-SemiBold',
         },

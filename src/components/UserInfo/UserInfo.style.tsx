@@ -80,6 +80,7 @@ const StatusText = styled.Text`
   color: ${({ theme }) => theme.colors.green};
   padding: 2px 8px;
   border-radius: 8px;
+  overflow: hidden;
 `;
 
 export {

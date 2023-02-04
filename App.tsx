@@ -1,6 +1,7 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import defaultTheme from './src/styles/theme';
 
@@ -17,10 +18,12 @@ const theme: typeof DefaultTheme = {
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <NavigationContainer theme={theme}>
-        <TabNavigation />
-        <StatusBar />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer theme={theme}>
+          <TabNavigation />
+          <StatusBar />
+        </NavigationContainer>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }

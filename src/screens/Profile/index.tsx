@@ -45,33 +45,33 @@ function Profile() {
     <Container>
       <UserInfo user={userData} />
       <View>
-        <ItemContainer>
-          <Wrapper>
-            <Subtitle
-              style={{ fontFamily: 'Poppins-SemiBold' }}
-              numberOfLines={1}
-              ellipsizeMode="tail"
-            >
-              Payment options
-            </Subtitle>
-            <StyledText
-              style={{ fontFamily: 'Poppins-Regular' }}
-              numberOfLines={1}
-              ellipsizeMode="tail"
-            >
-              Find out the current, choose a new
-            </StyledText>
-          </Wrapper>
-          <TouchableHighlight
-            activeOpacity={0.6}
-            underlayColor="none"
-            onPress={navigateOnPress}
-          >
+        <TouchableHighlight
+          activeOpacity={0.6}
+          underlayColor="none"
+          onPress={navigateOnPress}
+        >
+          <ItemContainer>
+            <Wrapper>
+              <Subtitle
+                style={{ fontFamily: 'Poppins-SemiBold' }}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
+                Payment options
+              </Subtitle>
+              <StyledText
+                style={{ fontFamily: 'Poppins-Regular' }}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
+                Find out the current, choose a new
+              </StyledText>
+            </Wrapper>
             <WrapperIcon>
               <ArrowNextIcon width={8} height={15} />
             </WrapperIcon>
-          </TouchableHighlight>
-        </ItemContainer>
+          </ItemContainer>
+        </TouchableHighlight>
       </View>
     </Container>
   );
